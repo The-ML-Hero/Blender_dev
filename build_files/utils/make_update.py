@@ -341,7 +341,7 @@ def blender_lfs_update(args: argparse.Namespace) -> None:
     # This seems to be required some times, e.g. on initial checkout from third party, non-lfs repository
     # (like the github one). The fallback repository set by `lfs_fallback_setup` is fetched, but running the
     # `update_command` above does not seem to do the actual checkout for these LFS-managed files.
-    update_lfs_command = [args.git_command, "lfs", "pull"]
+    update_lfs_command = [args.git_command, "lfs", "pull", "origin"]
     call(update_lfs_command)
 
 
